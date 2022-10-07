@@ -19,4 +19,6 @@ rviz shape为**固定图形**，支持Cone,Cube,Cylinder,Sphere,Mesh
 
 rviz::Shape有一个重要的成员，为Ogre::Entity*
 
+那么到底要仿照哪个源码写自己的pole visual呢,就rviz shape吧
+
 https://www.ogre3d.org/docs/api/1.7/class_ogre_1_1_entity.html

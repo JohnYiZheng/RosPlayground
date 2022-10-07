@@ -5,6 +5,11 @@
 #include <rviz/message_filter_display.h>
 #include <memory>
 
+namespace Ogre
+{
+class SceneNode;
+}
+
 namespace imu_display_imitation {
 
 class PoleVisual;

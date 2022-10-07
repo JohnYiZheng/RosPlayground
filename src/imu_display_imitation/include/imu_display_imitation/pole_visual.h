@@ -32,8 +32,11 @@ public:
   void setFramePosition( const Ogre::Vector3& position );
   void setFrameOrientation( const Ogre::Quaternion& orientation );
 
+  static Ogre::Entity* createEntity(const std::string& name, const std::string &path, Ogre::SceneManager* scene_manager);
+
 private:
-  std::shared_ptr<rviz::Shape> pole_shape_;
+  const std::string poleModelPath = "/home/yi/Projects/RosPlayground/src/custom_marker_viz/res/3d-model_3.dae";
+  Ogre::Entity* pole_shape_;
 
   Ogre::SceneNode* frame_node_;
 

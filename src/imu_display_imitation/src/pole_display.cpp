@@ -30,6 +30,11 @@ void PoleDisplay::onInitialize()
   MFDClass::onInitialize();
 }
 
+void PoleDisplay::reset()
+{
+  MFDClass::reset();
+}
+
 // This is our callback to handle an incoming message.
 void PoleDisplay::processMessage( const sensor_msgs::Imu::ConstPtr& msg )
 {
@@ -47,9 +52,10 @@ void PoleDisplay::processMessage( const sensor_msgs::Imu::ConstPtr& msg )
     return;
   }
 
-//   visual->setMessage( msg );
-//   visual->setFramePosition( position );
-//   visual->setFrameOrientation( orientation );
+  visual = std::make_shared<PoleVisual>( context_->getSceneManager(), scene_node_);
+  visual->setMessage( msg );
+  visual->setFramePosition( position );
+  visual->setFrameOrientation( orientation );
 }
 
 }
